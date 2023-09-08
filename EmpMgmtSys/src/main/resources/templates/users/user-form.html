@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<!-- Required meta tags -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+		integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+	<title>User Form</title>
+</head>
+
+<body>
+	<div class="container mt-5">
+		<h2>User Form</h2>
+		<form th:action="@{/users/save}" th:object="${user}" method="post">
+			<input type="hidden" th:field="*{id}">
+
+			<div class="form-group">
+				<label for="username">Username:</label>
+				<input type="text" class="form-control" id="username" th:field="*{username}" required>
+			</div>
+
+			<div class="form-group">
+				<label for="password">Password:</label>
+				<input type="password" class="form-control" id="password" th:field="*{password}" required>
+			</div>
+
+			<!-- Add more form fields as needed -->
+
+			<button type="submit" class="btn btn-primary">Save</button>
+		</form>
+	</div>
+
+	<!-- Bootstrap JS and jQuery (if needed) scripts can be included here -->
+</body>
+
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<!-- Required meta tags -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+		integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+	<title>Role Management</title>
+</head>
+
+<body>
+	<div class="container">
+		<h3>Role Management</h3>
+		<hr>
+		<p class="h4 mb-4">Role Details</p>
+		<form th:action="@{/roles/save}" method="post">
+			<label for="roleName">Role Name:</label>
+			<input type="text" id="roleName" name="roleName" required>
+			<br>
+			<button type="submit">Save Role</button>
+		</form>
+
+		<hr>
+		<a th:href="@{/roles/list}">Back to Role List</a>
+	</div>
+</body>
+
+</html>

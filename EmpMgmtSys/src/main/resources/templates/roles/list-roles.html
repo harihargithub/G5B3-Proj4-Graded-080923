@@ -1,0 +1,39 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<!-- Required meta tags -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+		integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+	<title>Role Management</title>
+</head>
+
+<body>
+	<div class="container">
+		<h3>Role Management</h3>
+		<hr>
+		<a th:href="@{/roles/form}" class="btn btn-info mb-3">Add Role</a>
+		<table class="table table-bordered table-striped">
+			<thead class="thead-dark">
+				<tr>
+					<th>Role Name</th>
+
+				</tr>
+			</thead>
+			<tbody>
+				<!-- For loop in Thymeleaf to display roles -->
+				<tr th:each="role : ${roles}">
+					<td th:text="${role.role}"></td>
+					<td>
+
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</body>
+
+</html>
